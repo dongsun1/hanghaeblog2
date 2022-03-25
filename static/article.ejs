@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/article.css" />
+    <script src="./js/api.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <h1>자유게시판</h1>
+        <div id="headerBtn">
+          <button
+            id="write"
+            class="btn btn-default"
+            onclick="location.href='/write'"
+          >
+            게시글 작성
+          </button>
+          <button id="logout" class="btn btn-default" onclick="logout()">
+            로그아웃
+          </button>
+        </div>
+      </header>
+      <hr />
+      <div id="boardTop">
+        <span id="boardNo">NO</span>
+        <span id="boardTitle">제목</span>
+        <span id="boardWriter">글쓴이</span>
+        <span id="boardDate">작성시간</span>
+        <span id="boardLike">좋아요</span>
+      </div>
+      <% for (let i = 0; i < articles.length; i++) { %>
+      <hr />
+      <div class="board">
+        <span class="boardNo"><%=articles[i].number%></span>
+        <a href="/detail/<%=articles[i].number%>" class="boardTitle">
+          <%=articles[i].title%>
+        </a>
+        <span class="boardWriter"><%=articles[i].userId%></span>
+        <span class="boardDate"><%=articles[i].date%></span>
+        <span class="boardLike"><%=articles[i].like%></span>
+      </div>
+      <% } %>
+    </div>
+    <script>
+      let user;
+      getSelf(function (u) {
+        user = u;
+      });
+    </script>
+  </body>
+</html>

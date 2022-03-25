@@ -1,0 +1,81 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#headerBtn {
+  line-height: 70px;
+  position: relative;
+  top: 10px;
+}
+
+#wrap {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#boardTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+#boardNo {
+  width: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#boardTitle {
+  width: 500px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#boardWriter {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#boardDate {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#boardLike {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boardNo {
+  width: 50px;
+  text-align: center;
+}
+
+.boardTitle {
+  width: 500px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.boardWriter {
+  width: 80px;
+  text-align: center;
+}
+
+.boardDate {
+  width: 80px;
+  text-align: center;
+}
+
+.boardLike {
+  width: 80px;
+  text-align: center;
+}

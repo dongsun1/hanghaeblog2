@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="./css/write.css" />
+    <script src="./js/api.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="title">제목</div>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        placeholder="제목을 입력해주세요."
+      />
+      <div class="title">내용</div>
+      <textarea id="desc" type="text" class="form-control" rows="20"></textarea>
+      <footer>
+        <button id="post" class="btn btn-default" onclick="post()">
+          게시글 작성
+        </button>
+        <button class="btn btn-default">취소</button>
+      </footer>
+    </div>
+  </body>
+</html>

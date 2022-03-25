@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/detail.css" />
+    <script src="./js/api.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <section>
+        <div class="alert_">작성자</div>
+        <div class="alert__"><%=detail.userId%></div>
+        <hr />
+        <div class="alert_">제목</div>
+        <div class="alert__"><%=detail.title%></div>
+        <hr />
+        <div class="alert_">내용</div>
+        <div class="alert__"><%=detail.desc%></div>
+        <hr />
+      </section>
+      <section>
+        <div class="alert_">댓글창</div>
+        <hr />
+        <div class="commentList">
+          <div class="userId">김동선</div>
+          <div class="comment">안녕하세요</div>
+        </div>
+        <hr />
+        <div id="commentForm">
+          <input
+            id="inputComment"
+            type="text"
+            class="form-control"
+            placeholder="댓글을 작성해주세요."
+          />
+          <button
+            id="btnCom"
+            class="btn btn-default"
+            onclick="postComment(<%=detail.number%>)"
+          >
+            작성
+          </button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
