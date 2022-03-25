@@ -82,25 +82,6 @@ function logout() {
   location.href = "/";
 }
 
-function getSelf(callback) {
-  $.ajax({
-    type: "GET",
-    url: "/api/users/me",
-    headers: {
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-    success: function (response) {
-      callback(response.user);
-    },
-    error: function (xhr, status, error) {
-      if (status == 401) {
-        alert("로그인이 필요합니다.");
-        location.href = "/";
-      }
-    },
-  });
-}
-
 function post() {
   const title = $("#title").val();
   const desc = $("#desc").val();
@@ -136,6 +117,11 @@ function post() {
 function postComment(number) {
   const comment = $("#inputComment").val();
   const userToken = localStorage.getItem("token");
+
+  if (!userToken) {
+    alert("로그인이 필요합니다.");
+    location.href = "/";
+  }
 
   if (comment === "") {
     alert("댓글을 작성해주세요.");

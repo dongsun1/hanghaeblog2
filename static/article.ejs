@@ -56,10 +56,18 @@
       <% } %>
     </div>
     <script>
-      let user;
-      getSelf(function (u) {
-        user = u;
-      });
+      const userToken = localStorage.getItem("token");
+      if (userToken) {
+        document.getElementById("logout").setAttribute("onClick", "logout()");
+        document.getElementById("logout").innerText = "로그아웃";
+      } else {
+        document.getElementById("logout").setAttribute("onClick", "goLogin()");
+        document.getElementById("logout").innerText = "로그인";
+      }
+
+      function goLogin() {
+        location.href = "/";
+      }
     </script>
   </body>
 </html>
