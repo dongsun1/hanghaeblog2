@@ -3,6 +3,11 @@
   margin: 0 auto;
 }
 
+#blogTItle {
+  text-align: center;
+  cursor: pointer;
+}
+
 .title {
   margin-top: 20px;
   margin-bottom: 10px;

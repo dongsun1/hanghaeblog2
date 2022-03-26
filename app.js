@@ -1,6 +1,7 @@
 const express = require("express");
 const connect = require("./schemas");
 const Post = require("./schemas/post");
+const Comment = require("./schemas/comment");
 const cors = require("cors");
 const app = express();
 const port = 3000;
@@ -9,6 +10,8 @@ connect();
 
 const usersRouter = require("./routes/users");
 const postsRouter = require("./routes/posts");
+const commentsRouter = require("./routes/comments");
+const likesRouter = require("./routes/likes");
 
 const requestMiddleware = (req, res, next) => {
   console.log("Request URL:", req.originalUrl, " - ", new Date());
@@ -24,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(requestMiddleware);
 
-app.use("/api", [usersRouter, postsRouter]);
+app.use("/api", [usersRouter, postsRouter, commentsRouter, likesRouter]);
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");

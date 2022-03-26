@@ -3,6 +3,11 @@
   margin: 0px auto;
 }
 
+#blogTItle {
+  text-align: center;
+  cursor: pointer;
+}
+
 #userId {
   margin-top: 20px;
 }
@@ -17,8 +22,12 @@
   margin-top: 20px;
 }
 
-#signup {
-  margin-top: 10px;
+#login {
+  margin-bottom: 10px;
+}
+
+#signUp {
+  margin-bottom: 10px;
 }
 
 #userPwCheck {

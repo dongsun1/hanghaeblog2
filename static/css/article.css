@@ -14,6 +14,11 @@ header {
   margin: 0 auto;
 }
 
+#blogTItle {
+  text-align: center;
+  cursor: pointer;
+}
+
 #boardTop {
   display: flex;
   justify-content: space-between;

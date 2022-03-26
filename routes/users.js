@@ -1,7 +1,6 @@
 const express = require("express");
 const User = require("../schemas/user");
 const jwt = require("jsonwebtoken");
-const authMiddleware = require("../middlewares/auth-middleware");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
@@ -28,11 +27,6 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ userId: loginCheck.userId }, "ehdtjs");
     res.json({ success: true, msg: "로그인에 성공하였습니다.", token: token });
   }
-});
-
-router.get("/users/me", authMiddleware, async (req, res) => {
-  const { user } = res.locals;
-  res.send({ user });
 });
 
 module.exports = router;

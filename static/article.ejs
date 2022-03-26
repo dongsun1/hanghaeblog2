@@ -19,13 +19,17 @@
   </head>
   <body>
     <div id="wrap">
+      <div>
+        <h1 id="blogTItle" onclick="location.href='/article'">Hanghae Blog2</h1>
+        <hr />
+      </div>
       <header>
         <h1>자유게시판</h1>
         <div id="headerBtn">
           <button
             id="write"
             class="btn btn-default"
-            onclick="location.href='/write'"
+            onclick="loginCheck('write')"
           >
             게시글 작성
           </button>
