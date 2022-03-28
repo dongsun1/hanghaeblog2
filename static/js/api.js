@@ -84,15 +84,29 @@ function logout() {
 
 function loginCheck(method) {
   const userToken = localStorage.getItem("token");
-  if (!userToken) {
-    alert("로그인이 필요합니다.");
-    location.href = "/";
-    return;
+
+  if (method === "comment") {
+    if (!userToken) {
+      alert("로그인이 필요합니다.");
+      location.href = "/";
+      return;
+    }
   }
 
   if (method === "write") {
-    location.href = "/write";
-    return;
+    if (!userToken) {
+      alert("로그인이 필요합니다.");
+      location.href = "/write";
+      return;
+    }
+  }
+
+  if (method === "login") {
+    if (userToken) {
+      alert("이미 로그인이 되어있습니다.");
+      location.href = "/article";
+      return;
+    }
   }
 }
 
@@ -270,7 +284,7 @@ function checkLike(postNumber) {
 function createLike(postNumber, userId) {
   const userToken = localStorage.getItem("token");
 
-  if (userToken === "") {
+  if (!userToken) {
     alert("로그인이 필요합니다.");
     location.href = "/";
     return;

@@ -1,8 +1,8 @@
 const express = require("express");
 const connect = require("./schemas");
 const Post = require("./schemas/post");
-const Comment = require("./schemas/comment");
 const cors = require("cors");
+const { swaggerUi, specs } = require("./modules/swagger");
 const app = express();
 const port = 3000;
 
@@ -26,6 +26,7 @@ app.use(express.static("static"));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(requestMiddleware);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use("/api", [usersRouter, postsRouter, commentsRouter, likesRouter]);
 
